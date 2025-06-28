@@ -1,0 +1,402 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "0",
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.easymotion": true,
+    "vim.surround": true,
+    "vim.visualstar": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(100, 170, 240, 0.5)",
+    "vim.highlightedyank.duration": 150,
+    "vim.whichwrap": "h,l,<,>,[,]",
+    "vim.statusBarColorControl": true,
+    "vim.timeout": 200,
+    "vim.statusBarColors.normal": [
+        "#161821",
+        "#818596"
+    ],
+    "vim.statusBarColors.insert": [
+        "#84A0C6",
+        "#161821"
+    ],
+    "vim.statusBarColors.visual": [
+        "#B4BE82",
+        "#161821"
+    ],
+    "vim.statusBarColors.visualline": [
+        "#B4BE82",
+        "#161821"
+    ],
+    "vim.statusBarColors.visualblock": [
+        "#B4BE82",
+        "#161821"
+    ],
+    "vim.statusBarColors.replace": [
+        "#E2A478",
+        "#161821"
+    ],
+    "vim.statusBarColors.commandlineinprogress": [
+        "#818596",
+        "#161821"
+    ],
+    "vim.statusBarColors.searchinprogressmode": [
+        "#818596",
+        "#161821"
+    ],
+    "vim.statusBarColors.easymotionmode": [
+        "#818596",
+        "#161821"
+    ],
+    "vim.statusBarColors.easymotioninputmode": [
+        "#818596",
+        "#161821"
+    ],
+    "vim.statusBarColors.surroundinputmode": [
+        "#818596",
+        "#161821"
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "x"
+            ],
+            "after": [
+                "\"",
+                "_",
+                "x"
+            ]
+        },
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "\"",
+                "_",
+                "s"
+            ]
+        },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "*"
+            ],
+            "after": [
+                "*",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "#",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<Enter>"
+            ],
+            "commands": [
+                "editor.action.insertLineAfter"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "w"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "q"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "x"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.formatDocument",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "h"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "m"
+            ],
+            "after": [
+                "%"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "z"
+            ],
+            "commands": [
+                ":noh"
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Leader>",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                ";",
+                ";"
+            ],
+            "commands": [
+                "editor.action.triggerSuggest"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Leader>",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "l"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "h"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "m"
+            ],
+            "after": [
+                "%"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<tab>"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before": ["<ESC>"],
+            "commands": [
+                {
+                "command": "workbench.action.terminal.sendSequence",
+                "args": {
+                    "text": "powershell.exe -NoProfile -Command \"Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('{ESC}')\""
+                }
+                }
+            ],
+            "after": ["<ESC>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<tab>"],
+            "after": [">", ">"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "after": ["<", "<"]
+        },
+        {
+            "before": ["{"],
+            "after": ["?", "^", "\\", "s", "*", "$", "<CR>"]
+        },
+        {
+            "before": ["}"],
+            "after": ["/", "^", "\\", "s", "*", "$", "<CR>"]
+        },
+        {
+            "before": ["["],
+            "after": ["?", "[", "(", "{", "\\", "[", "]", "\\", "s", "*", "$", "<CR>", ":", "n", "o", "h", "<CR>"]
+        },
+        {
+            "before": ["]"],
+            "after": ["/", "^", "\\", "s", "*", "[", ")", "}", "\\", "]", "]", "<CR>", ":", "n", "o", "h", "<CR>"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<tab>"],
+            "after": [">", "g", "v"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "after": ["<", "g", "v"]
+        }
+    ],
+    "workbench.colorTheme": "Iceberg",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#161821",
+        "statusBar.noFolderBackground": "#161821",
+        "statusBar.debuggingBackground": "#161821",
+        "statusBar.foreground": "#818596",
+        "statusBar.debuggingForeground": "#818596"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrap": "on",
+}
