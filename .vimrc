@@ -120,12 +120,10 @@ function! RenameCurrentFile()
 endfunction
 
 " Tabでインデントを増やす
-inoremap <Tab> <C-t>
 nnoremap <Tab> >>
 vnoremap <Tab> >gv
 
 " Shift+Tabでインデントを減らす
-inoremap <S-Tab> <C-d>
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <gv
 
