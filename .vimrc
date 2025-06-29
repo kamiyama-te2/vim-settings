@@ -435,6 +435,8 @@ set t_Co=256
 set encoding=utf-8
 set fileencoding=utf-8
 
+syntax enable
+colorscheme hybrid
 set background=dark
 
 " 背景を透過に
@@ -444,56 +446,16 @@ highlight LineNr ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 
 " ============================================================================
-" 行番号 - モダンなグレー系
+" 行番号
 " ============================================================================
 highlight LineNr ctermfg=240 guifg=#585858
 highlight CursorLineNr ctermfg=172 guifg=#d78700 cterm=bold gui=bold
 highlight RelativeLineNr ctermfg=242 guifg=#6c6c6c
 
 " ============================================================================
-" カーソル行・列 - 目立ちすぎない強調
+" カーソル行・列
 " ============================================================================
 highlight CursorLine ctermbg=234 guibg=#1c1c1c cterm=NONE gui=NONE
-
-" ============================================================================
-" 構文ハイライト - モダンなカラーパレット
-" ============================================================================
-" コメント（灰色、イタリック）
-highlight Comment ctermfg=245 guifg=#8a8a8a cterm=italic gui=italic
-
-" 文字列（温かみのある緑）
-highlight String ctermfg=114 guifg=#87d787
-
-" 数値（オレンジ）
-highlight Number ctermfg=209 guifg=#ff875f
-
-" キーワード（紫）
-highlight Keyword ctermfg=141 guifg=#af87ff cterm=bold gui=bold
-
-" 関数名（青）
-highlight Function ctermfg=117 guifg=#87d7ff cterm=bold gui=bold
-
-" 変数・識別子（シアン）
-highlight Identifier ctermfg=80 guifg=#5fd7d7
-
-" 型名（黄緑）
-highlight Type ctermfg=148 guifg=#afd700 cterm=bold gui=bold
-
-" 定数（オレンジ）
-highlight Constant ctermfg=208 guifg=#ff8700
-
-" 演算子（白）
-highlight Operator ctermfg=15 guifg=#ffffff
-
-" 括弧（灰色）
-highlight Delimiter ctermfg=248 guifg=#a8a8a8
-
-" ============================================================================
-" 検索・選択
-" ============================================================================
-highlight Search ctermbg=58 ctermfg=15 guibg=#5f5f00 guifg=#ffffff cterm=bold gui=bold
-highlight IncSearch ctermbg=196 ctermfg=15 guibg=#ff0000 guifg=#ffffff cterm=bold gui=bold
-highlight Visual ctermbg=240 guibg=#585858
 
 " ============================================================================
 " ステータスライン
@@ -643,27 +605,9 @@ highlight DiffChange ctermbg=58 ctermfg=15 guibg=#5f5f00 guifg=#ffffff
 highlight DiffDelete ctermbg=88 ctermfg=15 guibg=#870000 guifg=#ffffff
 highlight DiffText ctermbg=94 ctermfg=0 guibg=#875f00 guifg=#000000 cterm=bold gui=bold
 
-
 " ============================================================================
 " マッピング
 " ============================================================================
 " 検索ハイライトをクリア
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 
-" ============================================================================
-" ファイルタイプ別の追加設定
-" ============================================================================
-augroup FileTypeColors
-  autocmd!
-  " HTML/XML タグ
-  autocmd FileType html,xml highlight htmlTag ctermfg=117 guifg=#87d7ff
-  autocmd FileType html,xml highlight htmlEndTag ctermfg=117 guifg=#87d7ff
-
-  " CSS プロパティ
-  autocmd FileType css highlight cssProp ctermfg=114 guifg=#87d787
-  autocmd FileType css highlight cssAttr ctermfg=208 guifg=#ff8700
-
-  " JavaScript
-  autocmd FileType javascript highlight javaScriptFunction ctermfg=141 guifg=#af87ff
-  autocmd FileType javascript highlight javaScriptBraces ctermfg=15 guifg=#ffffff
-augroup END
