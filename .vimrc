@@ -3,6 +3,7 @@
 " ============================================================================
 set shortmess+=I " 起動時のメッセージを抑制
 set belloff=all  " 全てのベルを無効化
+set ambiwidth=double
 
 " OSのクリップボードを使用する
 set clipboard+=unnamed
@@ -43,8 +44,6 @@ set shiftwidth=4 " インデントの幅を4スペースに設定
 set softtabstop=4 " ソフトタブの幅を4スペースに設定
 set autoindent " 自動インデントを有効にする
 set smartindent " 改行時に入力された行の末尾に合わせて次の行のインデントを調整
-set list " スペースやタブを可視化
-set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮,nbsp:×
 set number " 行番号を表示
 set textwidth=0 " 自動折り返しを無効にする
 set cursorline " カーソル行を強調表示
