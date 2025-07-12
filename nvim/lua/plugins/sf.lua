@@ -31,6 +31,6 @@ return {
     vim.keymap.set('n', '<leader>dd', Sf.diff_in_target_org, { desc = "現在のファイルと対象組織のファイルの差分を表示" })
     vim.keymap.set('n', '<leader>oh', Sf.org_open, { desc = "組織をブラウザで開く" })
     vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
-      { desc = 'nvimのsfプラグイン設定ファイルを開く' })
+      { desc = 'nvimのSFプラグイン設定ファイルを開く' })
   end
 }

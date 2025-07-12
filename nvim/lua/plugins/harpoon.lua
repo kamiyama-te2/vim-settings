@@ -20,15 +20,15 @@ return {
     })
 
     -- 基本的なキーマッピング
-    vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = name .. "add" }) -- 現在のファイルを追加
+    vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = name .. "追加" }) -- 現在のファイルを追加
     vim.keymap.set("n", "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-      { desc = name .. "list" }) -- harpoonメニューを開く
+      { desc = name .. "一覧" }) -- harpoonメニューを開く
 
     -- 1-6番のファイルに直接移動するキーマッピング
     for index = 1, 6 do
       vim.keymap.set("n", "<leader>h" .. index, function()
         harpoon:list():select(index)
-      end, { desc = name .. "move to #" .. index })
+      end, { desc = name .. "#" .. index .. "に移動" })
     end
   end
 }

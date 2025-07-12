@@ -20,10 +20,10 @@ return {
   -- \hキーでhardtimeのオン/オフ切り替え
   vim.keymap.set('n', '\\h', function()
     vim.cmd('Hardtime toggle')
-  end, { noremap = true, silent = true, desc = 'toggle hard-time' }),
+  end, { noremap = true, silent = true, desc = 'hard-timeのトグル' }),
 
   -- \pキーでprecognitionのオン/オフ切り替え
   vim.keymap.set('n', '\\p', function()
     require("precognition").toggle()
-  end, { noremap = true, silent = true, desc = 'toggle precognition' })
+  end, { noremap = true, silent = true, desc = 'precognitionのトグル' })
 }

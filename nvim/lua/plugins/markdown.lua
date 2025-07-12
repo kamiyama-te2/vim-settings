@@ -15,6 +15,6 @@ return {
       }
     })
     -- \mキーでMarkdownレンダリングのオン/オフ切り替え
-    vim.keymap.set('n', '\\m', require('render-markdown').toggle, { desc = 'toggle markdown' })
+    vim.keymap.set('n', '\\m', require('render-markdown').toggle, { desc = 'Markdownレンダリングのトグル' })
   end,
 }

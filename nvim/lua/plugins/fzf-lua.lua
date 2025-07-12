@@ -46,35 +46,35 @@ return {
             local fzf = require('fzf-lua')
 
             -- ファイル操作関連のキーマッピング（<leader>f + 文字）
-            nmap('<leader>ff', fzf.files, 'files') -- ファイル検索
-            nmap('<leader>fr', fzf.resume, 'resume') -- 前回の検索を再開
-            nmap('<leader>fd', fzf.diagnostics_document, 'diagnostics') -- 診断情報
-            nmap('<leader>fD', function() fzf.files({ cwd = vim.fn.stdpath 'config' }) end, 'dotfiles') -- 設定ファイル
-            nmap('<leader>fb', fzf.buffers, 'buffers') -- バッファ一覧
-            nmap('<leader>.', fzf.oldfiles, 'recent files') -- 最近使用したファイル
+            nmap('<leader>ff', fzf.files, 'ファイル') -- ファイル検索
+            nmap('<leader>fr', fzf.resume, '検索を再開') -- 前回の検索を再開
+            nmap('<leader>fd', fzf.diagnostics_document, '診断情報') -- 診断情報
+            nmap('<leader>fD', function() fzf.files({ cwd = vim.fn.stdpath 'config' }) end, '設定ファイル') -- 設定ファイル
+            nmap('<leader>fb', fzf.buffers, 'バッファ') -- バッファ一覧
+            nmap('<leader>.', fzf.oldfiles, '最近のファイル') -- 最近使用したファイル
 
             -- 検索関連のキーマッピング（グローバル検索、単語検索など）
-            nmap('<leader>fg', fzf.grep, 'grep') -- テキスト検索
-            nmap('<leader>fw', fzf.grep_cword, 'word in project') -- カーソル下の単語をプロジェクト内で検索
-            nmap('<leader>fW', fzf.grep_cWORD, 'word in current') -- カーソル下の単語（拡張）を検索
-            nmap("<leader>fm", fzf.lsp_document_symbols, 'method list') -- LSPシンボル一覧
-            nmap('<leader>/', fzf.grep_curbuf, 'search current buffer') -- 現在のバッファ内検索
+            nmap('<leader>fg', fzf.grep, 'テキスト検索') -- テキスト検索
+            nmap('<leader>fw', fzf.grep_cword, 'プロジェクト内の単語') -- カーソル下の単語をプロジェクト内で検索
+            nmap('<leader>fW', fzf.grep_cWORD, '現在の単語') -- カーソル下の単語（拡張）を検索
+            nmap("<leader>fm", fzf.lsp_document_symbols, 'メソッド一覧') -- LSPシンボル一覧
+            nmap('<leader>/', fzf.grep_curbuf, '現在のバッファを検索') -- 現在のバッファ内検索
 
             -- 履歴とヘルプ関連のキーマッピング
-            nmap('<leader>fc', fzf.command_history, 'command history') -- コマンド履歴
-            nmap('<leader>fh', fzf.helptags, 'help') -- ヘルプタグ
+            nmap('<leader>fc', fzf.command_history, 'コマンド履歴') -- コマンド履歴
+            nmap('<leader>fh', fzf.helptags, 'ヘルプ') -- ヘルプタグ
 
             -- Git関連のキーマッピング（<leader>g + 文字）
-            nmap('<leader>gf', fzf.git_files, 'git files') -- Gitファイル
-            nmap('<leader>gc', fzf.git_commits, 'git commits') -- Gitコミット履歴
-            nmap('<leader>gC', fzf.git_bcommits, 'git commits this buffer') -- このバッファのコミット履歴
-            nmap('<leader>gb', fzf.git_branches, 'git branches') -- Gitブランチ
+            nmap('<leader>gf', fzf.git_files, 'Gitファイル') -- Gitファイル
+            nmap('<leader>gc', fzf.git_commits, 'Gitコミット') -- Gitコミット履歴
+            nmap('<leader>gC', fzf.git_bcommits, 'このバッファのGitコミット') -- このバッファのコミット履歴
+            nmap('<leader>gb', fzf.git_branches, 'Gitブランチ') -- Gitブランチ
 
             -- ctagsを使用したタグ検索（universal-ctagsが必要）
             nmap('<leader>ft', function()
                 create_ctags()
                 fzf.tags()
-            end, 'ctag in project') -- プロジェクト内のctag検索
+            end, 'プロジェクト内のctag') -- プロジェクト内のctag検索
 
             -- zoxideを使用したディレクトリ変更（smart cd - zoxideのインストールが必要）
             nmap('<leader>z', function()
@@ -87,10 +87,10 @@ return {
                         end
                     }
                 })
-            end, 'z setup cwd') -- zoxideを使用した作業ディレクトリ設定
+            end, 'zで作業ディレクトリ設定') -- zoxideを使用した作業ディレクトリ設定
 
             -- ビジュアルモードでの検索（選択テキストでgrep）
-            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = 'visual grep [Fzf]' })
+            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = '選択テキストを検索 [Fzf]' })
         end
     }
 }

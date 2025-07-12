@@ -24,8 +24,8 @@ return {
           lookahead = true, -- カーソルより先の要素も検索対象に含める
 
           keymaps = { -- テキストオブジェクト選択のキーマッピング
-            ["l="] = { query = "@assignment.lhs", desc = "ts: left assignment" },
-            ["r="] = { query = "@assignment.rhs", desc = "ts: right assignment" },
+            ["l="] = { query = "@assignment.lhs", desc = "ts: 代入左辺" },
+            ["r="] = { query = "@assignment.rhs", desc = "ts: 代入右辺" },
             -- ["aa"] = { query = "@parameter.outer", desc = "ts: outer parameter" },
             -- ["ia"] = { query = "@parameter.inner", desc = "ts: inner parameter" },
             -- ["am"] = { query = "@function.outer", desc = "ts: outer function" },
@@ -52,8 +52,8 @@ return {
           enable = true,
           set_jumps = true, -- ジャンプリストに移動履歴を記録
           goto_next_start = { -- 次の構文要素の開始位置に移動
-            ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
-            ["]a"] = { query = "@parameter.inner", desc = "ts: next def method/function start" },
+            ["]m"] = { query = "@function.outer", desc = "ts: 次の関数開始" },
+            ["]a"] = { query = "@parameter.inner", desc = "ts: 次の引数" },
             -- ["]c"] = { query = "@class.outer", desc = "ts: next class start" },
             -- ["]i"] = { query = "@conditional.outer", desc = "ts: next conditional start" },
             -- ["]l"] = { query = "@loop.outer", desc = "next loop start" },
@@ -61,20 +61,20 @@ return {
             -- ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
           },
           goto_next_end = { -- 次の構文要素の終了位置に移動
-            ["]M"] = { query = "@function.outer", desc = "ts: next def method/function end" },
+            ["]M"] = { query = "@function.outer", desc = "ts: 次の関数終了" },
             -- ["]C"] = { query = "@class.outer", desc = "ts: next class end" },
             -- ["]I"] = { query = "@conditional.outer", desc = "ts: next conditional end" },
             -- ["]L"] = { query = "@loop.outer", desc = "ts: next loop end" },
           },
           goto_previous_start = { -- 前の構文要素の開始位置に移動
-            ["[m"] = { query = "@function.outer", desc = "ts: prev def method/function start" },
-            ["[a"] = { query = "@parameter.inner", desc = "ts: next def method/function start" },
+            ["[m"] = { query = "@function.outer", desc = "ts: 前の関数開始" },
+            ["[a"] = { query = "@parameter.inner", desc = "ts: 前の引数" },
             -- ["[c"] = { query = "@class.outer", desc = "ts: prev class start" },
             -- ["[i"] = { query = "@conditional.outer", desc = "ts: prev conditional start" },
             -- ["[l"] = { query = "@loop.outer", desc = "ts: prev loop start" },
           },
           goto_previous_end = { -- 前の構文要素の終了位置に移動
-            ["[M"] = { query = "@function.outer", desc = "ts: prev def method/function end" },
+            ["[M"] = { query = "@function.outer", desc = "ts: 前の関数終了" },
             -- ["[C"] = { query = "@class.outer", desc = "ts: prev class end" },
             -- ["[I"] = { query = "@conditional.outer", desc = "ts: prev conditional end" },
             -- ["[L"] = { query = "@loop.outer", desc = "ts: prev loop end" },
