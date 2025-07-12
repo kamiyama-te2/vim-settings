@@ -34,82 +34,10 @@ set cmdheight=2 " コマンドラインの高さを2行に設定
 set showmatch " 対応する括弧を強調表示
 set wildmenu wildmode=list:longest,full " コマンドラインモードでTABキーによるファイル名補完を有効にする
 
-" ============================================================================
-" キーマッピング
-" ============================================================================
-" ノーマルモードの設定
-" 削除でレジスタに格納しない（ビジュアルモードでの選択後は格納する）
-nnoremap x "_x
-" ノーマルモード中でもエンターキーで改行挿入でインサートモードに戻る
-noremap <CR> i<CR>
-" j, kによる移動を折り返されたテキストでも自然に振る舞うように変更
-nnoremap j gj
-nnoremap k gk
-" Ctrl + hjklでウィンドウ移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-" Shift + 矢印でウィンドウサイズ変更
-nnoremap <S-Left> <C-w><<CR>
-nnoremap <S-Right> <C-w>><CR>
-nnoremap <S-Up> <C-w>-<CR>
-nnoremap <S-Down> <C-w>+<CR>
-
-" {}で空行を検索（デフォルトだとタブが空行として認識されないため）
-nnoremap { ?^\s*$<CR>
-nnoremap } /^\s*$<CR>
-
-" insertモードの設定
-inoremap <C-s> <Esc>:w<CR> " Ctrl + sで保存
-inoremap <C-q> <Esc>:q<CR> " Ctrl + qで終了
-
-" leaderをスペースに設定
-let mapleader = "\<Space>"
-" leaderキーのタイムアウト
-set timeoutlen=400
-
-" Escapeキー（挿入モードから抜ける）
-inoremap <Leader>j <Esc>       " 半角スペース + j
-" ファイル保存
-nnoremap <Leader>w :w<CR>      " 半角スペース + w
-" ファイル終了
-nnoremap <Leader>q :q<CR>      " 半角スペース + q
-" 全選択（ノーマルモード）
-noremap <Leader>a myggVG$      " 半角スペース + a
-" 全選択（挿入モードから）
-inoremap <Leader>a <Esc>myggVG$   " 半角スペース + a
-" ウィンドウ移動（スペース2回）
-noremap <Leader><Leader> <C-w>w    " 半角スペース + 半角スペース
-
-" Tabでインデントを増やす
-nnoremap <Tab> >>
-vnoremap <Tab> >gv
-
-" Shift+Tabでインデントを減らす
-nnoremap <S-Tab> <<
-vnoremap <S-Tab> <gv
 
 " ============================================================================
 " 日本語入力の設定
 " ============================================================================
-
-" 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
-nnoremap あ a
-nnoremap い i
-nnoremap う u
-nnoremap お o
-nnoremap っd dd
-nnoremap っy yy
-inoremap 　ｊ <Esc>            " 全角スペース + 全角j
-nnoremap 　ｗ :w<CR>           " 全角スペース + 全角w
-noremap 　　 <C-w>w                " 全角スペース + 全角スペース
-nnoremap <silent> 　ｒ :source ~/.vimrc<CR>       " 全角スペース + 全角r
-nnoremap <silent> 　ｖｒ :new ~/.vimrc<CR>        " 全角スペース + 全角vr
-inoremap 　ａ <Esc>myggVG$        " 全角スペース + 全角a
-noremap 　ａ myggVG$           " 全角スペース + 全角a
-nnoremap 　ｑ :q<CR>           " 全角スペース + 全角q
-
 " ESCキーでWSLIMEをオフにする
 function! WSLIMEOff()
     " 非同期で実行
@@ -129,11 +57,6 @@ augroup END
 
 inoremap <silent> <ESC> <ESC>:call WSLIMEOff()<CR>
 
-" スペース + f(F,t,T) で digraph を入力で、日本語の検索ができるようにする
-noremap <space>f f<C-k>
-noremap <space>F F<C-k>
-noremap <space>t t<C-k>
-noremap <space>T T<C-k>
 
 " ============================================================================
 " 基本五十音（ひらがな）
@@ -385,5 +308,3 @@ digraph 99 65305  " ９
 " ============================================================================
 " マッピング
 " ============================================================================
-" 検索ハイライトをクリア
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
