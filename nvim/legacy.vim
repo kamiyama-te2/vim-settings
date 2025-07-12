@@ -3,37 +3,27 @@
 " ============================================================================
 set shortmess+=I " 起動時のメッセージを抑制
 
-" OSのクリップボードを使用する
-set clipboard+=unnamed
-set clipboard=unnamed
-
-" ファイル設定
-set nobackup " バックアップファイルを作成しない
-set noswapfile " スワップファイルを作成しない
-set viminfo="" " Vim情報ファイルを使用しない
-set noundofile " undoファイルを使用しない
-set hlsearch    " 検索結果をハイライト表示
-set incsearch   " インクリメンタルサーチを有効にする
-set ignorecase  " 検索時に大文字小文字を区別しない
-set smartcase   " 検索時に大文字が含まれる場合は大文字小文字を区別する
-set linebreak   " 行の折り返しを単語単位で行う
-set showbreak=↪\    " 折り返し行の先頭に表示する文字
-
-" 表示設定
-set backspace=indent,eol,start " バックスペースを効かせる
-set expandtab " タブをスペースに変換
-set tabstop=4 " タブの幅を4スペースに設定
-set shiftwidth=4 " インデントの幅を4スペースに設定
-set softtabstop=4 " ソフトタブの幅を4スペースに設定
-set autoindent " 自動インデントを有効にする
-set smartindent " 改行時に入力された行の末尾に合わせて次の行のインデントを調整
-set number " 行番号を表示
-set textwidth=0 " 自動折り返しを無効にする
-set cursorline " カーソル行を強調表示
-set cmdheight=2 " コマンドラインの高さを2行に設定
-set showmatch " 対応する括弧を強調表示
-set wildmenu wildmode=list:longest,full " コマンドラインモードでTABキーによるファイル名補完を有効にする
-
+" " OSのクリップボードを使用する
+" set clipboard+=unnamed
+" set clipboard=unnamed
+"
+" " ファイル設定
+" set nobackup " バックアップファイルを作成しない
+" set noswapfile " スワップファイルを作成しない
+" set viminfo="" " Vim情報ファイルを使用しない
+" set noundofile " undoファイルを使用しない
+" set hlsearch    " 検索結果をハイライト表示
+" set incsearch   " インクリメンタルサーチを有効にする
+" set ignorecase  " 検索時に大文字小文字を区別しない
+" set smartcase   " 検索時に大文字が含まれる場合は大文字小文字を区別する
+" set linebreak   " 行の折り返しを単語単位で行う
+" set showbreak=↪\    " 折り返し行の先頭に表示する文字
+"
+" " 表示設定
+" set backspace=indent,eol,start " バックスペースを効かせる
+" set cmdheight=2 " コマンドラインの高さを2行に設定
+" set showmatch " 対応する括弧を強調表示
+" set wildmenu wildmode=list:longest,full " コマンドラインモードでTABキーによるファイル名補完を有効にする
 
 " ============================================================================
 " 日本語入力の設定
@@ -304,7 +294,3 @@ digraph 66 65302  " ６
 digraph 77 65303  " ７
 digraph 88 65304  " ８
 digraph 99 65305  " ９
-
-" ============================================================================
-" マッピング
-" ============================================================================

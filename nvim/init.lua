@@ -1,4 +1,8 @@
 require("config.lazy")
+require("cellwidths")
+require("globals")
+require("cellwidths")
+require("extra")
+require("opt")
 require("keys")
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/legacy.vim')
-
