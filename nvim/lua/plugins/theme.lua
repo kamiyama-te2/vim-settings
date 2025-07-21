@@ -1,13 +1,10 @@
 return {
   {
-    "masisz/ashikaga.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require('ashikaga').setup({
-        dim_inactive = true,
-      })
-      vim.cmd("colorscheme ashikaga")
+      vim.cmd[[colorscheme tokyonight]]
     end
   }
 }

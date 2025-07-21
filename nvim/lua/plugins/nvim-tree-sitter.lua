@@ -4,8 +4,19 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects', -- 構文要素をテキストオブジェクトとして操作
-    'nvim-treesitter/nvim-treesitter-context' -- 現在のコンテキストを上部に表示
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      config = function()
+        require("treesitter-context").setup({
+          enable = false,
+          max_lines = 4,
+          trim_scope = 'inner',
+        })
+        vim.keymap.set('n', '\\c', require 'treesitter-context'.toggle,
+          { noremap = true, silent = true, desc = 'treesitter-context' })
+      end
+    },
   },
   build = ':TSUpdate', -- インストール時にTree-sitterパーサーを自動更新
   config = function()
@@ -17,6 +28,7 @@ return {
         enable = true, -- Tree-sitterベースのハイライト有効化
         additional_vim_regex_highlighting = false, -- 従来のVim正規表現ハイライトを無効化
       },
+      debug = true,
 
       textobjects = { -- コード要素をテキストオブジェクトとして操作
         select = { -- 構文要素の選択機能

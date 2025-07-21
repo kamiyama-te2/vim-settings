@@ -11,7 +11,9 @@ return {
   },
 
   config = function()
-    require('sf').setup()
+    require('sf').setup({
+      auto_display_code_sign = false,
+    })
     local Sf = require('sf')
 
     vim.keymap.set('n', '<leader>sft', Sf.set_target_org, { desc = "[SF]対象組織を設定" })

@@ -13,10 +13,12 @@ vim.diagnostic.config({
 vim.opt.list = true
 -- 各不可視文字の表示方法を設定
 vim.opt.listchars:append {
-  trail = "~",    -- 行末の空白文字を ~ で表示
-  tab = ">-",     -- タブ文字を >- で表示
-  nbsp = "␣",     -- ノーブレークスペースを ␣ で表示
+  space = ".",
+  trail = "_",
+  tab = ">-",
+  nbsp = "␣",
 }
+vim.opt.fillchars = { eob = " " }
 
 -- =============================================================================
 -- 検索・置換設定
