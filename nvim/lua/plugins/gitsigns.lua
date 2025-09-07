@@ -49,5 +49,67 @@ return {
       row = 0,
       col = 1
     },
+
+    -- キーマップ設定を追加
+    on_attach = function(bufnr)
+      local gs = require('gitsigns')
+      
+      vim.keymap.set('v', '<leader>gs', function()
+        gs.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})
+      end, {buffer = bufnr, desc = '[gitsigns]選択行をステージング'})
+      
+      vim.keymap.set('v', '<leader>gr', function()
+        gs.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})
+      end, {buffer = bufnr, desc = '[gitsigns]選択行のステージングを解除'})
+
+      -- Hunk間の移動（]c / [c）
+      vim.keymap.set('n', ']c', function()
+        if vim.wo.diff then return ']c' end
+        vim.schedule(function() gs.next_hunk() end)
+        return '<Ignore>'
+      end, {buffer = bufnr, expr = true, desc = '[gitsigns]次のhunk'})
+
+      vim.keymap.set('n', '[c', function()
+        if vim.wo.diff then return '[c' end
+        vim.schedule(function() gs.prev_hunk() end)
+        return '<Ignore>'
+      end, {buffer = bufnr, expr = true, desc = '[gitsigns]前のhunk'})
+
+      -- diff表示のトグル機能
+      vim.keymap.set('n', '<leader>gd', function()
+        if vim.wo.diff then
+          vim.cmd('diffoff')
+          vim.cmd('only')
+        else
+          gs.diffthis()
+        end
+      end, {buffer = bufnr, desc = '[gitsigns]Diff表示切り替え'})
+
+      -- ファイル全体をステージング
+      vim.keymap.set('n', '<leader>gS', gs.stage_buffer, 
+        {buffer = bufnr, desc = '[gitsigns]ファイル全体をステージング'})
+
+      -- undo stage（ステージングを戻す）
+      vim.keymap.set('n', '<leader>gU', gs.undo_stage_hunk, 
+        {buffer = bufnr, desc = '[gitsigns]ステージングを取り消し'})
+
+      -- コミット関連を追加
+      vim.keymap.set('n', '<leader>gc', function()
+        -- ステージされた変更があるかチェック
+        local staged = vim.fn.system('git diff --cached --name-only')
+        if staged == '' then
+          print('ステージされた変更がありません')
+          return
+        end
+        
+        local msg = vim.fn.input('Commit message: ')
+        if msg ~= '' then
+          vim.fn.system('git commit -m "' .. msg .. '"')
+          print('コミット完了: ' .. msg)
+          gs.refresh() -- Gitsignsをリフレッシュ
+        end
+      end, {buffer = bufnr, desc = '[gitsigns]コミット'})
+
+    end,
   },
 }
