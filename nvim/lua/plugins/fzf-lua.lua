@@ -23,7 +23,7 @@ return {
             -- ノーマルモードでのキーマッピング設定用の関数
             local nmap = function(keys, func, desc)
                 if desc then
-                    desc = desc .. ' [Fzf]'
+                    desc = '[Fzf]' .. desc
                 end
                 vim.keymap.set('n', keys, func, { desc = desc })
             end
@@ -90,7 +90,7 @@ return {
             end, 'zで作業ディレクトリ設定') -- zoxideを使用した作業ディレクトリ設定
 
             -- ビジュアルモードでの検索（選択テキストでgrep）
-            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = '選択テキストを検索 [Fzf]' })
+            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = '[Fzf]選択テキストを検索' })
         end
     }
 }
